@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Golden Nova</title>
+  <link rel="stylesheet" href="styling.css" />
+</head>
+
+<body class="protected-page">
+
+  <!-- ══════════════════════════════════════
+       HEADER (same on every page)
+  ══════════════════════════════════════ -->
+  <nav>
+    <div class="navtop">
+        <div class="navItem">
+            <h1 class="logo">Golden Nova</h1>
+        </div>
+
+        <div class="navItem">
+            <div class="search">
+                <input type="text" placeholder="search..." class="searchInput">
+                <img src="images/search-521.png" width="20" height="20" alt="">
+            </div>
+        </div>
+
+        <div class="navItem">
+            <button>Logout</button>
+        </div>
+    </div>
+
+    <div class="navbtm">
+        <h3 class="menuItem">Home</h3>
+        <h3 class="menuItem">Clothes</h3>
+        <h3 class="menuItem">Books</h3>
+        <h3 class="menuItem">Electronics</h3>
+        <h3 class="menuItem">Cart</h3>
+    </div>
+</nav>
+
+
+<br><br>
+
+  <!-- ══════════════════════════════════════
+       NAVIGATION
+  ══════════════════════════════════════ -->
+ 
+  <!-- ══════════════════════════════════════
+       PAGE LAYOUT:
+       [Aside 1] [Products Section] [Aside 2]
+  ══════════════════════════════════════ -->
+
+  <div class="container">
+    <div class="category-page-layout">
+
+      <!-- ── ASIDE 1: Shopping Guidelines (auto-scrolling) ── -->
+      <aside class="aside-panel" aria-label="Shopping guidelines">
+        <h4>📋 Shopping Info</h4>
+        <div class="ticker-wrap">
+          <div class="ticker-content">
+            <p>👗 New arrivals every Monday!</p>
+            <p>🔄 Exchange or return within 30 days, no questions asked.</p>
+            <p>📏 Size guide available on each product page.</p>
+            <p>🚚 Free shipping on orders above 3 000 DA.</p>
+            <p>🌿 Eco-friendly packaging used for all orders.</p>
+            <p>💳 Pay on delivery available in major cities.</p>
+            <br/>
+            <!-- Duplicate for seamless loop -->
+            <p>👗 New arrivals every Monday!</p>
+            <p>🔄 Exchange or return within 30 days, no questions asked.</p>
+            <p>📏 Size guide available on each product page.</p>
+            <p>🚚 Free shipping on orders above 3 000 DA.</p>
+            <p>🌿 Eco-friendly packaging used for all orders.</p>
+            <p>💳 Pay on delivery available in major cities.</p>
+          </div>
+        </div>
+
+        <hr style="border-color:var(--clr-border); margin:1rem 0;" />
+
+       
+      </aside>
+
+      <!-- ── CENTER: Products Section ── -->
+      <main class="products-section">
+
+        <h2>Clothing</h2>
+
+        <div class="products-grid">
+
+          <!-- ── Article / Product 1: red dress ── -->
+          <article class="product-card">
+            <div class="product-img-wrap">
+               
+                <img src="images/red dress.jpg"  alt="long d (1).jpg">
+            </div>
+            <div class="product-body">
+               <strong class="product-name">Burgundy Ruched Midi Dress</strong>
+              <p class="product-desc">
+                Elegant burgundy midi dress with a ruched bodice, spaghetti straps, and a flowing skirt.
+                Perfect for  special occasions.
+              </p>
+              <span class="product-price">4 990 DA</span>
+              <div class="product-controls">
+                <input type="number" min="1" value="1" aria-label="maxi dress" />
+                <button
+                  class="btn btn-primary btn-add-cart"
+                  data-id="cloth-001"
+                  data-name="Classic Denim Jacket"
+                  data-price="4990"
+                  data-category="Clothing"
+                >
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- ── Article / Product 2: black dress ── -->
+          <article class="product-card">
+            <div class="product-img-wrap">
+                <img src="images/summer 2 (1).jpg" alt="">
+            </div>
+            <div class="product-body">
+              <strong class="product-name">Floral Bow Strap Dress</strong>
+              <p class="product-desc">
+               Chic floral dress with bow straps and a soft layered skirt for a stylish feminine look.
+              </p>
+              <span class="product-price">6 500 DA</span>
+              <div class="product-controls">
+                <input type="number" min="1" value="1" aria-label="Quantity for Urban Runner Sneakers" />
+                <button
+                  class="btn btn-primary btn-add-cart"
+                  data-id="cloth-002"
+                  data-name="Urban Runner Sneakers"
+                  data-price="6500"
+                  data-category="Clothing"
+                >
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- ── Article / Product 3: Summer Dress ── -->
+          <article class="product-card">
+            <div class="product-img-wrap">
+                <img src="images/black d1.jpg" alt="">
+            </div>
+            <div class="product-body">
+              <strong class="product-name">Floral Summer Dress</strong>
+              <p class="product-desc">
+                Lightweight floral print dress, midi length.
+                Perfect for warm weather and casual outings.
+              </p>
+              <span class="product-price">3 800 DA</span>
+              <div class="product-controls">
+                <input type="number" min="1" value="1" aria-label="Quantity for Floral Summer Dress" />
+                <button
+                  class="btn btn-primary btn-add-cart"
+                  data-id="cloth-003"
+                  data-name="Floral Summer Dress"
+                  data-price="3800"
+                  data-category="Clothing"
+                >
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- ── Article / Product 4:  dress satan ── -->
+          <article class="product-card">
+            <div class="product-img-wrap">
+                <img src="images/download (1).jpg" alt="">
+            </div>
+            <div class="product-body">
+              <strong class="product-name">satan dress</strong>
+              <p class="product-desc">
+                Soft merino wool blend, crew neck, anti-pilling finish.
+                Great for autumn and winter.
+              </p>
+              <span class="product-price">5 200 DA</span>
+              <div class="product-controls">
+                <input type="number" min="1" value="1" aria-label="Quantity for Merino Wool Sweater" />
+                <button
+                  class="btn btn-primary btn-add-cart"
+                  data-id="cloth-004"
+                  data-name="Merino Wool Sweater"
+                  data-price="5200"
+                  data-category="Clothing"
+                >
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- ── Article / Product 5: Summer dress 2 ── -->
+          <article class="product-card">
+            <div class="product-img-wrap">
+                <img src="images/summer 2.jpg" alt="">
+            </div>
+            <div class="product-body">
+              <strong class="product-name">Merino Wool Sweater</strong>
+              <p class="product-desc">
+                Soft merino wool blend, crew neck, anti-pilling finish.
+                Great for autumn and winter.
+              </p>
+              <span class="product-price">5 200 DA</span>
+              <div class="product-controls">
+                <input type="number" min="1" value="1" aria-label="Quantity for Merino Wool Sweater" />
+                <button
+                  class="btn btn-primary btn-add-cart"
+                  data-id="cloth-004"
+                  data-name="Merino Wool Sweater"
+                  data-price="5200"
+                  data-category="Clothing"
+                >
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+          </article>
+ 
+          <!-- ── Article / Product 6: green dress ── -->
+          <article class="product-card">
+            <div class="product-img-wrap">
+                <img src="images/green d.jpg" alt="green dress">
+            </div>
+            <div class="product-body">
+              <strong class="product-name">Classic Nude Pointed-Toe Stilettos</strong>
+              <p class="product-desc">
+                A timeless pair of glossy nude pumps with a high stiletto heel, perfect for formal occasions.
+              </p>
+              <span class="product-price">7,500 DA</span>
+              <div class="product-controls">
+                <input type="number" min="1" value="1" aria-label="Quantity for Merino Wool Sweater" />
+                <button
+                  class="btn btn-primary btn-add-cart"
+                  data-id="cloth-004"
+                  data-name="Merino Wool Sweater"
+                  data-price="5200"
+                  data-category="Clothing"
+                >
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+          </article>
+        </div>
+        <!-- End products-grid 1 -->
+
+<br><br>
+
+         <div class="products-grid">
+
+          <!-- ── Article / Product 1:Saint Laurent bag  ── -->
+          <article class="product-card">
+            <div class="product-img-wrap">
+               
+                <img src="images/sl bag.jpg"  alt="Saint Laurent">
+            </div>
+            <div class="product-body">
+               <strong class="product-name">Saint Laurent Hobo Bag</strong>
+              <p class="product-desc">
+               A sleek patent leather hobo in rich glossy red, featuring the iconic gold YSL logo on the front tab.
+              </p>
+              <span class="product-price">12,500 DA</span>
+              <div class="product-controls">
+                <input type="number" min="1" value="1" aria-label="maxi dress" />
+                <button
+                  class="btn btn-primary btn-add-cart"
+                  data-id="cloth-001"
+                  data-name="Classic Denim Jacket"
+                  data-price="4990"
+                  data-category="Clothing"
+                >
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- ── Article / Product 2: dior bag ── -->
+          <article class="product-card">
+            <div class="product-img-wrap">
+                <img src="images/dior b.jpg" alt="dior bag">
+            </div>
+            <div class="product-body">
+              <strong class="product-name">Lady Dior (White Leather)</strong>
+              <p class="product-desc">
+               Elegant two-tone handbag in cream and burgundy with gold hardware, a structured silhouette, and a delicate floral scarf tied to the handle.
+              <span class="product-price">6 500 DA</span>
+              <div class="product-controls">
+                <input type="number" min="1" value="1" aria-label="Quantity for Urban Runner Sneakers" />
+                <button
+                  class="btn btn-primary btn-add-cart"
+                  data-id="cloth-002"
+                  data-name="Urban Runner Sneakers"
+                  data-price="6500"
+                  data-category="Clothing"
+                >
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- ── Article / Product 3: prada bag ── -->
+          <article class="product-card">
+            <div class="product-img-wrap">
+                <img src="images/prada b.jpg" alt="prada bag">
+            </div>
+            <div class="product-body">
+              <strong class="product-name">Prada Re-Edition 2005 (Black)</strong>
+              <p class="product-desc">
+                Modern bag made from durable Saffiano leather with a detachable chain handle and a signature triangular enamel logo on the front.
+              </p>
+              <span class="product-price">2,800 DA</span>
+              <div class="product-controls">
+                <input type="number" min="1" value="1" aria-label="Quantity for Floral Summer Dress" />
+                <button
+                  class="btn btn-primary btn-add-cart"
+                  data-id="cloth-003"
+                  data-name="Floral Summer Dress"
+                  data-price="3800"
+                  data-category="Clothing"
+                >
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- ── Article / Product 4:  leather bag── -->
+          <article class="product-card">
+            <div class="product-img-wrap">
+                <img src="images/gold b.jpg" alt="leather bg">
+            </div>
+            <div class="product-body">
+              <strong class="product-name">Deep Burgandi leather bag</strong>
+              <p class="product-desc">
+                A structured, architectural silhouette featuring a fold-over flap with a signature gold-tone lock closure.
+              </p>
+              <span class="product-price">5,900 DA</span>
+              <div class="product-controls">
+                <input type="number" min="1" value="1" aria-label="Quantity for Merino Wool Sweater" />
+                <button
+                  class="btn btn-primary btn-add-cart"
+                  data-id="cloth-004"
+                  data-name="Merino Wool Sweater"
+                  data-price="5200"
+                  data-category="Clothing"
+                >
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- ── Article / Product 5: birkin bag ── -->
+          <article class="product-card">
+            <div class="product-img-wrap">
+                <img src="images/birkin bag.jpg" alt="birkin bag">
+            </div>
+            <div class="product-body">
+              <strong class="product-name">Hermès Birkin 25</strong>
+              <p class="product-desc">
+                The ultimate symbol of luxury. This structured tote features dual top handles, a signature front flap with a turn-lock closure, and polished gold-tone hardware.
+              </p>
+              <span class="product-price">5,900 DA</span>
+              <div class="product-controls">
+                <input type="number" min="1" value="1" aria-label="Quantity for Merino Wool Sweater" />
+                <button
+                  class="btn btn-primary btn-add-cart"
+                  data-id="cloth-004"
+                  data-name="Merino Wool Sweater"
+                  data-price="5200"
+                  data-category="Clothing"
+                >
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- ── Article / Product 6: pretty bag ── -->
+          <article class="product-card">
+            <div class="product-img-wrap">
+                <img src="images/leather b.jpg" alt="pretty bag">
+            </div>
+            <div class="product-body">
+              <strong class="product-name">Gladdon Small Crossbody Purse</strong>
+              <p class="product-desc">
+                A timeless purse with a small top-handle crossbody style with a magnetic flap closure.
+              </p>
+              <span class="product-price">7,500 DA</span>
+              <div class="product-controls">
+                <input type="number" min="1" value="1" aria-label="Quantity for Merino Wool Sweater" />
+                <button
+                  class="btn btn-primary btn-add-cart"
+                  data-id="cloth-004"
+                  data-name="Merino Wool Sweater"
+                  data-price="5200"
+                  data-category="Clothing"
+                >
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+<br><br>
+
+<div class="products-grid">
+
+          <!-- ── Article / Product 1:Saint Laurent heels  ── -->
+          <article class="product-card">
+            <div class="product-img-wrap">
+               
+                <img src="images/sl h.jpg"  alt="Saint Laurent">
+            </div>
+            <div class="product-body">
+               <strong class="product-name">Saint Laurent Opyum Sandals</strong>
+              <p class="product-desc">
+               Iconic black patent leather sandals featuring a unique gold-tone "YSL" sculpted heel.
+              </p>
+              <span class="product-price">12,500 DA</span>
+              <div class="product-controls">
+                <input type="number" min="1" value="1" aria-label="maxi dress" />
+                <button
+                  class="btn btn-primary btn-add-cart"
+                  data-id="cloth-001"
+                  data-name="Classic Denim Jacket"
+                  data-price="4990"
+                  data-category="Clothing"
+                >
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- ── Article / Product 2: white sandals ── -->
+          <article class="product-card">
+            <div class="product-img-wrap">
+                <img src="images/white sandl.jpg" alt="white sandals">
+            </div>
+            <div class="product-body">
+              <strong class="product-name">Crystal Queen White Stiletto Sandals</strong>
+              <p class="product-desc">
+               elegant white high-heeled sandals feature thin straps and a gold-tone charm hanging from the ankle buckle.
+              <span class="product-price">6 500 DA</span>
+              <div class="product-controls">
+                <input type="number" min="1" value="1" aria-label="Quantity for Urban Runner Sneakers" />
+                <button
+                  class="btn btn-primary btn-add-cart"
+                  data-id="cloth-002"
+                  data-name="Urban Runner Sneakers"
+                  data-price="6500"
+                  data-category="Clothing"
+                >
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- ── Article / Product 3: burgandi heels ── -->
+          <article class="product-card">
+            <div class="product-img-wrap">
+                <img src="images/b h.jpg" alt="burgandi heels">
+            </div>
+            <div class="product-body">
+              <strong class="product-name">Burgundy Patent Slingback Stiletto Heels</strong>
+              <p class="product-desc">
+                Chic burgundy slingback heels with a glossy patent finish, pointed toe, and slim stiletto heel.
+              </p>
+              <span class="product-price">2,800 DA</span>
+              <div class="product-controls">
+                <input type="number" min="1" value="1" aria-label="Quantity for Floral Summer Dress" />
+                <button
+                  class="btn btn-primary btn-add-cart"
+                  data-id="cloth-003"
+                  data-name="Floral Summer Dress"
+                  data-price="3800"
+                  data-category="Clothing"
+                >
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- ── Article / Product 4:  louboutin heels ── -->
+          <article class="product-card">
+            <div class="product-img-wrap">
+                <img src="images/lbnt.jpg" alt="louboutin heels">
+            </div>
+            <div class="product-body">
+              <strong class="product-name">Midnight Gloss Pointed-Toe Pumps</strong>
+              <p class="product-desc">
+                Classic black patent pumps featuring a sleek pointed toe and ultra-slim stiletto heel.
+              </p>
+              <span class="product-price">5 200 DA</span>
+              <div class="product-controls">
+                <input type="number" min="1" value="1" aria-label="Quantity for Merino Wool Sweater" />
+                <button
+                  class="btn btn-primary btn-add-cart"
+                  data-id="cloth-004"
+                  data-name="Merino Wool Sweater"
+                  data-price="5200"
+                  data-category="Clothing"
+                >
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- ── Article / Product 5: black bow heels ── -->
+          <article class="product-card">
+            <div class="product-img-wrap">
+                <img src="images/0dd21fd342a2185768c2d7e37ad0db6e.jpg" alt="lblack bow heels">
+            </div>
+            <div class="product-body">
+              <strong class="product-name">Crystal Queen White Stiletto Sandals</strong>
+              <p class="product-desc">
+                Sophisticated black heels featuring a sharp pointed toe accented with a delicate gold-tone charm hanging from the ankle buckle.
+              </p>
+              <span class="product-price">5,900 DA</span>
+              <div class="product-controls">
+                <input type="number" min="1" value="1" aria-label="Quantity for Merino Wool Sweater" />
+                <button
+                  class="btn btn-primary btn-add-cart"
+                  data-id="cloth-004"
+                  data-name="Merino Wool Sweater"
+                  data-price="5200"
+                  data-category="Clothing"
+                >
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- ── Article / Product 6: nude heels ── -->
+          <article class="product-card">
+            <div class="product-img-wrap">
+                <img src="images/nude h.jpg" alt="ude heels">
+            </div>
+            <div class="product-body">
+              <strong class="product-name">Classic Nude Pointed-Toe Stilettos</strong>
+              <p class="product-desc">
+                A timeless pair of glossy nude pumps with a high stiletto heel, perfect for formal occasions.
+              </p>
+              <span class="product-price">7,500 DA</span>
+              <div class="product-controls">
+                <input type="number" min="1" value="1" aria-label="Quantity for Merino Wool Sweater" />
+                <button
+                  class="btn btn-primary btn-add-cart"
+                  data-id="cloth-004"
+                  data-name="Merino Wool Sweater"
+                  data-price="5200"
+                  data-category="Clothing"
+                >
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+      </main>
+
+      <!-- ── ASIDE 2: Cart Summary (dynamic) ── -->
+      <aside class="aside-panel" id="cart-summary" aria-label="Cart summary">
+        <h4>🛒 Cart Summary</h4>
+        <p style="font-size:0.82rem; color:var(--clr-muted); margin-bottom:0.5rem;">
+          Items: <span class="cart-count-badge" id="aside-count">0</span>
+        </p>
+        <ul class="cart-summary-list" id="cart-summary-list">
+          <li style="color:var(--clr-muted)">Cart is empty</li>
+        </ul>
+        <div class="cart-total">
+          <span>Total</span>
+          <span id="aside-total">0.00 DA</span>
+        </div>
+        <button id="checkout-btn" class="btn btn-danger" style="width:100%;">
+          Checkout 💳
+        </button>
+        <div id="order-confirmation" class="order-confirmation"></div>
+      </aside>
+
+    </div>
+    <!-- End category-page-layout -->
+  </div>
+
+  <!-- ══════════════════════════════════════
+       CHECKOUT BAR
+  ══════════════════════════════════════ -->
+  <hr>
+  <section class="checkout-bar" id="checkout-bar">
+    <div class="container checkout-bar-inner">
+      <div class="total-display">
+        Order Total: <span id="checkout-total">0.00 DA</span>
+      </div>
+      <p style="font-size:0.85rem; color:var(--clr-muted);">
+        Click "Checkout" in the cart panel to confirm your order.
+      </p>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       FOOTER SECTION
+  ══════════════════════════════════════ -->
+  <hr>
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <span class="logo-text">Golden Nova</span>
+        <p>WAD Homework — L2 2025/2026</p>
+        <p>UMBB — Faculty of Science, Computer Science</p>
+      </div>
+      <div class="footer-students">
+        <h4>Project Team</h4>
+        <div class="student-card">
+          <div class="student-info">
+            <div class="info-line"><span>👤</span><span>HAFID MAROUA </span></div>
+            <div class="info-line"><span>👤</span><span>SANAA</span></div>
+            <div class="info-line"><span>👤</span><span>MAROUA</span></div>
+            <div class="info-line"><span>👤</span><span>HANAA</span></div>
+            <div class="info-line"><span>👤</span><span>RYM</span></div>
+            
+            <div class="info-line"><span>🆔</span><span>Group 5</span></div>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
