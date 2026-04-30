@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title> golden nova </title>
+  <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+
+  
+  <header class="header">
+  
+  </header>
+
+  
+  <nav>
+    <a href="main.html"> Home</a>
+    <a href="electronics.html">Electronics</a>
+    <a href="clothing.html">Clothing</a>
+    <a href="books.html">Books</a>
+    <a href="#">Cart</a>
+  </nav>
+
+  
+  <main class="categories">
+
+    <article class="card">
+      <a href="electroo.html">
+        <img src="backround electro.jpg" alt="Electronics">
+        <h2>Electronics</h2>
+        <p>Discover the latest electronic devices</p>
+      </a>
+    </article>
+
+    <article class="card">
+      <a href="clothes.html">
+        <img src="backround clo.jpg" alt="Clothing">
+        <h2>Clothing</h2>
+        <p>Explore our fashion collection</p>
+      </a>
+    </article>
+
+    <article class="card">
+      <a href="books.html">
+        <img src="backround books.jpg" width="160px" alt="Books">
+        <h2>Books</h2>
+        <p>Find your favorite books</p>
+      </a>
+    </article>
+
+  </main>
+
+  <footer>
+  <p class="footer-text">
+
+    <span id="show-students" class="link">
+      👤 student names
+    </span>
+
+    <br><br>
+
+    <span id="show-emails" class="link">
+      📧 student emails
+    </span>
+
+  </p>
+</footer>
+
+<!-- Students Modal -->
+<div id="students-modal" class="modal">
+  <h2>Contributors</h2>
+  <ul>
+    <li> maroua saidani</li>
+    <li>hana berdioui</li>
+    <li>rym khomri</li>
+    <li>sanaa hamadache</li>
+    <li>maroua hafid</li>
+  </ul>
+  <button id="close-modal">Close</button>
+</div>
+
+<!-- Emails Modal -->
+<div id="emails-modal" class="modal">
+  <h2>Emails</h2>
+  <ul>
+    <li>saidani0maroua@email.com</li>
+    <li>hana.berdioui@email.com</li>
+    <li>rym.khomri@email.com</li>
+    <li>sanaa.hamadache@email.com</li>
+    <li>maroua.hafid@email.com</li>
+  </ul>
+  <button id="close-emails">Close</button>
+</div>
+
+<script src="script.js"></script>
+<script>
+const showBtn = document.getElementById("show-students");
+const modal = document.getElementById("students-modal");
+const closeBtn = document.getElementById("close-modal");
+
+showBtn.addEventListener("click", () => {
+  modal.style.display = "block";
+});
+
+closeBtn.addEventListener("click", () => {
+  modal.style.display = "none";
+});
+
+
+const showBtn2 = document.getElementById("show-emails");
+const modal2 = document.getElementById("emails-modal");
+const closeBtn2 = document.getElementById("close-emails");
+
+showBtn2.addEventListener("click", () => {
+  modal2.style.display = "block";
+});
+
+closeBtn2.addEventListener("click", () => {
+  modal2.style.display = "none";
+});
+</script>
