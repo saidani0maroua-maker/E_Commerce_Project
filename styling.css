@@ -82,7 +82,7 @@ nav:hover .navbtm a {
   color: #74726f;
   padding: 0.4rem 0.8rem;
   border: 1px solid white;
-  border-radius: 6px red;
+  border-radius: 6px;
   transition: border-color 0.25s ease , color 0.25s ease;
 }
 .header-cart-link:hover { border-color: #e8c547; color: #e8c547; }
