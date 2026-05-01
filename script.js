@@ -1,71 +1,3 @@
-/* ============================================================
-   script.js — ShopWave E-Commerce Platform
-   Handles: authentication, cart (localStorage), UI updates
-   Author: [Your Name]
-   ============================================================ */
-
-/* ──────────────────────────────────────────────────────────
-   1.  DEMO CREDENTIALS
-   In a real app these would be verified server-side via login.php
-   ────────────────────────────────────────────────────────── */
-const DEMO_USERS = [
-  { login: "admin",   password: "admin123"  },
-  { login: "student", password: "pass2026"  }
-];
-
-/* ──────────────────────────────────────────────────────────
-   2.  AUTHENTICATION
-   ────────────────────────────────────────────────────────── */
-
-/**
- * Handles the login form submission.
- * Validates credentials against DEMO_USERS.
- * On success → redirect to main.html and store session flag.
- * On failure → display error message.
- */
-function handleLogin(event) {
-  event.preventDefault(); // prevent default form submit
-
-  const loginInput = document.getElementById("login").value.trim();
-  const passInput  = document.getElementById("password").value.trim();
-  const errorBox   = document.getElementById("auth-error");
-
-  // Find matching user
-  const match = DEMO_USERS.find(
-    u => u.login === loginInput && u.password === passInput
-  );
-
-  if (match) {
-    // Store logged-in user info in localStorage
-    localStorage.setItem("sw_logged_in", "true");
-    localStorage.setItem("sw_username", loginInput);
-    // Redirect to main catalog
-    window.location.href = "main.html";
-  } else {
-    // Show error
-    errorBox.classList.add("visible");
-    document.getElementById("password").value = "";
-  }
-}
-
-/**
- * Protect pages that require login.
- * Call this at the top of main/category pages.
- */
-function requireLogin() {
-  if (localStorage.getItem("sw_logged_in") !== "true") {
-    window.location.href = "index.html";
-  }
-}
-
-/**
- * Log out: clear session and redirect to login.
- */
-function logout() {
-  localStorage.removeItem("sw_logged_in");
-  localStorage.removeItem("sw_username");
-  window.location.href = "index.html";
-}
 
 /* ──────────────────────────────────────────────────────────
    3.  CART — localStorage-based persistence
@@ -290,29 +222,7 @@ function showToast(message) {
    ────────────────────────────────────────────────────────── */
 document.addEventListener("DOMContentLoaded", () => {
 
-  // ── Login form ──
-  const loginForm = document.getElementById("login-form");
-  if (loginForm) {
-    loginForm.addEventListener("submit", handleLogin);
-  }
 
-  // ── Logout button ──
-  const logoutBtn = document.getElementById("logout-btn");
-  if (logoutBtn) {
-    logoutBtn.addEventListener("click", logout);
-  }
-
-  // ── Protect pages that need a session ──
-  // Pages with class "protected-page" require login
-  if (document.body.classList.contains("protected-page")) {
-    requireLogin();
-  }
-
-  // ── Display username in header ──
-  const userEl = document.getElementById("header-username");
-  if (userEl) {
-    userEl.textContent = localStorage.getItem("sw_username") || "Guest";
-  }
 
   // ── "Add to Cart" buttons ──
   document.querySelectorAll(".btn-add-cart").forEach(btn => {

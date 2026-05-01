@@ -9,8 +9,8 @@ nav{
     padding: 20px 50px;
 }
 nav:hover{
-    background-color: white;
-    color: black;
+  background-color: white;
+  color: black;
 }
 .navtop{
     display: flex;
@@ -34,12 +34,20 @@ nav:hover{
     gap: 30px;
     margin-top: 5px;
 }
-
-.menuItem{
+.navbtm a {
+  color: white;
+  text-decoration: none;
+}
+.navbtm:hover{
+  color: black;
+}
+.menuItem {
     cursor: pointer;
     transition: color 0.3s ease;
 }
-
+nav:hover .navbtm a {
+  color: black;
+}
 
 /* ── CSS Custom Properties (Design Tokens) ── */
 :root {
@@ -71,16 +79,16 @@ nav:hover{
   align-items: center;
   gap: 0.4rem;
   font-size: 0.9rem;
-  color: var(--clr-text);
+  color: #74726f;
   padding: 0.4rem 0.8rem;
-  border: 1px solid var(--clr-border);
-  border-radius: var(--radius-sm);
-  transition: border-color var(--transition), color var(--transition);
+  border: 1px solid white;
+  border-radius: 6px red;
+  transition: border-color 0.25s ease , color 0.25s ease;
 }
-.header-cart-link:hover { border-color: var(--clr-accent); color: var(--clr-accent); }
+.header-cart-link:hover { border-color: #e8c547; color: #e8c547; }
 
 .cart-badge {
-  background: var(--clr-accent);
+  background: #e8c547;
   color: #000;
   border-radius: 50%;
   width: 20px;
@@ -94,7 +102,7 @@ nav:hover{
 /* ── NAVIGATION ── */
 .site-nav {
   background: var(--clr-card);
-  border-bottom: 1px solid var(--clr-border);
+  border-bottom: 1px solid #e8c547;
 }
 
 .site-nav ul {
@@ -135,41 +143,6 @@ nav:hover{
   justify-content: space-between;
 }
 
-.footer-brand .logo-text { font-family: var(--font-display); font-size: 1.4rem; color: var(--clr-accent); }
-.footer-brand p { font-size: 0.85rem; margin-top: 0.4rem; }
-
-.footer-students h4 {
-  font-size: 0.75rem;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: var(--clr-accent);
-  margin-bottom: 0.75rem;
-}
-
-.student-card {
-  background: var(--clr-card);
-  border: 1px solid var(--clr-border);
-  border-radius: var(--radius-sm);
-  padding: 0.75rem 1rem;
-  margin-bottom: 0.5rem;
-  min-width: 240px;
-}
-
-.student-card .student-info {
-  display: flex;
-  flex-direction: column;
-  gap: 0.3rem;
-  font-size: 0.85rem;
-}
-
-.student-card .info-line {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  color: var(--clr-text);
-}
-.student-card .info-line span:first-child { font-size: 1rem; flex-shrink: 0; }
-/* ── CATEGORY PAGES (electronics / clothing / books) ── */
 .category-page-layout {
   display: grid;
   grid-template-columns: 220px 1fr 220px;
@@ -257,10 +230,11 @@ nav:hover{
 
 .products-grid {
   display: grid;
+  margin-top: 30px;
   padding: 0 1rem;
   padding-top:  10px ;
   padding-bottom: 10px;
-  background-color: #c0392b;
+  background-color: rgb(178, 8, 8);
   border-radius: 10px;
   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
   gap: 1.25rem;}
@@ -285,7 +259,7 @@ nav:hover{
 
 
 .product-img-wrap {
-  height: 180px;
+  height: 165px;
   background:white;
   display: flex;
   align-items: center;
