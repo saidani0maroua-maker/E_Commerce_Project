@@ -9,7 +9,7 @@ body {
 
 header {
   background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)),
-              url("backround header.jpg");
+              url("images/backround header.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -96,7 +96,7 @@ nav a {
 
 .categories {
     background: linear-gradient(rgba(255,255,255,0.1), rgba(255,255,255,0.1)),
-                url("backround categories.jpg");
+                url("images/backround categories.jpg");
 
     background-size: cover;
     background-position: center;
