@@ -1,10 +1,5 @@
 
-/* ──────────────────────────────────────────────────────────
-   3.  CART — localStorage-based persistence
-   Cart structure in localStorage key "sw_cart":
-   [ { id, name, price, qty, category }, ... ]
-   ────────────────────────────────────────────── */
-
+/* 3.  CART — localStorage-based persistence */
 /**
  * Get the cart array from localStorage.
  * Returns an empty array if nothing is stored yet.
@@ -13,10 +8,7 @@ function getCart() {
   const raw = localStorage.getItem("sw_cart");
   return raw ? JSON.parse(raw) : [];
 }
-
-/**
- * Save the cart array back to localStorage.
- */
+/** Save the cart array back to localStorage. */
 function saveCart(cart) {
   localStorage.setItem("sw_cart", JSON.stringify(cart));
 }
@@ -45,9 +37,7 @@ function addToCart(id, name, price, qty, category) {
   showToast(`✅ "${name}" added to cart!`);
 }
 
-/**
- * Remove an item from the cart by its ID.
- */
+/**Remove an item from the cart by its ID. */
 function removeFromCart(id) {
   let cart = getCart();
   cart = cart.filter(item => item.id !== id);
@@ -55,24 +45,18 @@ function removeFromCart(id) {
   updateCartUI();
 }
 
-/**
- * Clear the entire cart.
- */
+/** Clear the entire cart.*/
 function clearCart() {
   saveCart([]);
   updateCartUI();
 }
 
-/**
- * Calculate total number of items in the cart.
- */
+/** Calculate total number of items in the cart.*/
 function getCartItemCount() {
   return getCart().reduce((sum, item) => sum + item.qty, 0);
 }
 
-/**
- * Calculate the total price of the cart.
- */
+/** Calculate the total price of the cart.*/
 function getCartTotal() {
   return getCart().reduce((sum, item) => sum + item.price * item.qty, 0);
 }
@@ -84,15 +68,14 @@ function updateCartUI() {
   const count = getCartItemCount();
   const total = getCartTotal();
 
-  // ── Header badge ──
+  //  Header badge 
   const badges = document.querySelectorAll(".cart-badge");
   badges.forEach(b => { b.textContent = count; });
 
-  // ── Aside cart summary ──
+  // Aside cart summary 
   const summaryList = document.getElementById("cart-summary-list");
   if (summaryList) {
-    const cart = getCart();
-
+   const cart = getCart();
     if (cart.length === 0) {
       summaryList.innerHTML = "<li style='color:var(--clr-muted)'>Cart is empty</li>";
     } else {
@@ -104,29 +87,23 @@ function updateCartUI() {
       ).join("");
     }
   }
-
-  // ── Aside total ──
+  //  the total 
   const totalEl = document.getElementById("aside-total");
   if (totalEl) totalEl.textContent = total.toFixed(2) + " DA";
 
-  // ── Aside item count badge ──
+  // side item count badge 
   const countEl = document.getElementById("aside-count");
   if (countEl) countEl.textContent = count;
 
-  // ── Checkout bar ──
+  // Checkout bar 
   const checkoutTotal = document.getElementById("checkout-total");
   if (checkoutTotal) checkoutTotal.textContent = total.toFixed(2) + " DA";
 }
 
-/* ──────────────────────────────────────────────────────────
-   4.  "ADD TO CART" BUTTON HANDLER
-   Reads quantity input next to the button.
-   ────────────────────────────────────────────────────────── */
-
+/*   4.  "ADD TO CART" BUTTON HANDLER*/
 /**
  * Called when any "Add to Cart" button is clicked.
- * Reads data attributes from the button itself.
- * @param {HTMLButtonElement} btn - the clicked button element
+* @param {HTMLButtonElement} btn - the clicked button element
  */
 function handleAddToCart(btn) {
   const id       = btn.dataset.id;
@@ -150,16 +127,9 @@ function handleAddToCart(btn) {
     btn.textContent = "Add to Cart";
   }, 1500);
 }
-
-/* ──────────────────────────────────────────────────────────
-   5.  CHECKOUT
-   ────────────────────────────────────────────────────────── */
-
-/**
- * Handle checkout button click.
- * Displays the total and a confirmation message.
- * In a real app this would POST to save_order.php.
- */
+/* 5.  CHECKOUT*/
+/** * Handle checkout button click.
+*/
 function handleCheckout() {
   const cart  = getCart();
   const total = getCartTotal();
@@ -177,23 +147,12 @@ function handleCheckout() {
 
   // Clear cart after checkout
   clearCart();
-
-  // In a real scenario, submit to save_order.php via fetch:
-  /*
-  fetch('save_order.php', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ cart, total, customer_id: sessionCustomerId })
-  });
-  */
 }
-
-/* ──────────────────────────────────────────────────────────
+/* 
    6.  TOAST NOTIFICATION
-   ────────────────────────────────────────────────────────── */
-
+*/
 /**
- * Show a brief toast popup at the bottom-right of the screen.
+ * Show a popup at the bottom-right of the screen.
  * @param {string} message - text to display
  */
 function showToast(message) {
@@ -214,9 +173,9 @@ function showToast(message) {
   setTimeout(() => { toast.classList.remove("show"); }, 2500);
 }
 
-/* ──────────────────────────────────────────────────────────
+/*
    7.  PAGE INIT — runs when DOM is ready
-   ────────────────────────────────────────────────────────── */
+ */
 document.addEventListener("DOMContentLoaded", () => {
   // ── "Add to Cart" buttons ──
   document.querySelectorAll(".btn-add-cart").forEach(btn => {
@@ -229,6 +188,28 @@ document.addEventListener("DOMContentLoaded", () => {
     checkoutBtn.addEventListener("click", handleCheckout);
   }
 
-  // ── Initial cart UI refresh ──
+  // ── Initial cart  refresh ──
   updateCartUI();
+});
+  // ── the search bar ──
+document.addEventListener("DOMContentLoaded", () => {
+
+  const searchInput = document.getElementById("search-input");
+
+  if (searchInput) {
+    searchInput.addEventListener("input", () => {
+      const query = searchInput.value.toLowerCase().trim();
+      const cards = document.querySelectorAll(".product-card");
+
+      cards.forEach(card => {
+        const name = card.querySelector(".product-name").textContent.toLowerCase();
+        if (name.includes(query)) {
+          card.style.display = "flex"; // show
+        } else {
+          card.style.display = "none"; // hide
+        }
+      });
+    });
+  }
+
 });
