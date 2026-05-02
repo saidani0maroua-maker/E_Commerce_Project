@@ -1,4 +1,5 @@
- let products=[
+
+let products=[
 { id:1,
   title:"Wemen's Dress",
   price:"3200 DZD",

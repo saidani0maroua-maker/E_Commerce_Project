@@ -78,10 +78,7 @@ function getCartTotal() {
 }
 
 /**
- * Update all cart-related UI elements on the page:
- * - Header badge count
- * - Aside cart summary (if on category page)
- * - Checkout bar total (if visible)
+ * Update elements on the page:
  */
 function updateCartUI() {
   const count = getCartItemCount();
@@ -221,9 +218,6 @@ function showToast(message) {
    7.  PAGE INIT — runs when DOM is ready
    ────────────────────────────────────────────────────────── */
 document.addEventListener("DOMContentLoaded", () => {
-
-
-
   // ── "Add to Cart" buttons ──
   document.querySelectorAll(".btn-add-cart").forEach(btn => {
     btn.addEventListener("click", () => handleAddToCart(btn));
