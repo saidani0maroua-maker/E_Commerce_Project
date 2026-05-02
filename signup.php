@@ -1,27 +1,41 @@
 <?php
+$conn = new mysqli("localhost", "root", "", "ecommerce_projecct");// Connect to the database
+if ($conn->connect_error) {
+    die("Connection failed: " .
+  $conn->connect_error);
+}
+$msg="";
+$class="";
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $msg="";
     $user = $_POST['username'];
-    $pass = $_POST['password'];
-    $confirm = $_POST['confirm'];
+
+    $address = $_POST['address'];
+    $phone = $_POST['phone'];
+    $email = $_POST['email'];
     if(
     
     
        strlen($user)>=3 &&
-       strlen($pass)>=6 &&
-       $pass == $confirm
+       
+       !empty($address) &&
+       !empty($phone) &&
+       !empty($email)
 
     ){
-        $msg="account create successfuly!";
-        $class="success";
-        header("Location: index.php");
-        exit();
-    }else{
-        $msg="Invalid username or password.";
-        $class="error";
-    }
-   
-       
+        $sql = "INSERT INTO customer (`name`,`address`,`phone_number`, `email`) VALUES ('$user', '$address', '$phone', '$email')";
+
+        if ($conn->query($sql) === TRUE) {
+            $msg="account create successfuly!";
+            $class="success";
+            header("Location: index.php");
+            exit();
+        } else {
+            $msg="Error: " . $sql . "<br>" . $conn->error;
+            $class="error";
+        } 
+    }   
 }
 ?>
 <!DOCTYPE html>
@@ -46,7 +60,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <input type="tel" id="phone" name="phone" placeholder="enter your phone number"><br><br>
 
         <label for="address">Address:</label>
-        <input type="text" id="address" name="address" placeholder="enter your address"><br><br>
+        <input type="text" id="address" name="address" placeholder="enter your address" list="addresses"><br><br>
       <datalist id="addresses">
            <option value="Adrar">
            <option value="Chlef">
@@ -68,11 +82,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
            <option value="El Oued">
       </datalist> 
 
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" placeholder="enter your password" required><br><br>
-
-        <label for="confirm">Confirm Password:</label>
-        <input type="password" id="confirm" name="confirm" placeholder=" your password" required><br><br>
+       
 
         <button type="submit">Sign up</button>
 
